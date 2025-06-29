@@ -54,13 +54,17 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
         private void CalculateDiscount()
         {
             Discount = 0;
-            if (Quantity >= Discount20PercentThreshold)
+            if (Quantity >= Discount20PercentThreshold && Quantity <= MaxQuantity)
             {
                 Discount = UnitPrice * Quantity * 0.20m;
             }
-            else if (Quantity >= Discount10PercentThreshold)
+            else if (Quantity >= Discount10PercentThreshold && Quantity < Discount20PercentThreshold)
             {
                 Discount = UnitPrice * Quantity * 0.10m;
+            }
+            else
+            {
+                Discount = 0;
             }
         }
 
