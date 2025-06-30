@@ -84,3 +84,64 @@ This section includes links to the detailed documentation for the different API 
 This section describes the overall structure and organization of the project files and directories. 
 
 See [Project Structure](/.doc/project-structure.md)
+
+## Como Executar e Testar o Projeto
+
+Este projeto é uma aplicação .NET 8.0 e pode ser executado e testado usando o SDK do .NET.
+
+### Pré-requisitos
+
+*   [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) instalado.
+*   Um editor de código como [Visual Studio Code](https://code.visualstudio.com/) ou [Visual Studio](https://visualstudio.microsoft.com/).
+
+### Configuração
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone (https://github.com/heberthsilva/Ambev)
+    cd Ambev/template/backend
+    ```
+
+2.  **Restaure as dependências:**
+    Navegue até o diretório `template/backend` e execute o comando para restaurar os pacotes NuGet:
+    ```bash
+    dotnet restore
+    ```
+
+### Execução da API
+
+1.  **Navegue até o diretório da API:**
+    ```bash
+    cd src/Ambev.DeveloperEvaluation.WebApi
+    ```
+
+2.  **Execute a aplicação:**
+    ```bash
+    dotnet run
+    ```
+    A API será iniciada e estará disponível em `https://localhost:7001` (ou outra porta configurada). Você pode acessar a documentação Swagger em `https://localhost:7001/swagger`.
+
+### Execução dos Testes
+
+Navegue de volta para o diretório `template/backend` e execute os testes.
+
+1.  **Executar Testes Unitários:**
+    ```bash
+    dotnet test tests/Ambev.DeveloperEvaluation.Unit/Ambev.DeveloperEvaluation.Unit.csproj
+    ```
+
+2.  **Executar Testes Funcionais:**
+    ```bash
+    dotnet test tests/Ambev.DeveloperEvaluation.Functional/Ambev.DeveloperEvaluation.Functional.csproj
+    ```
+
+3.  **Executar Testes de Integração:**
+    ```bash
+    dotnet test tests/Ambev.DeveloperEvaluation.Integration/Ambev.DeveloperEvaluation.Integration.csproj
+    ```
+
+Para executar todos os testes de uma vez:
+```bash
+dotnet test
+```
+(Certifique-se de estar no diretório `template/backend` para este comando)
